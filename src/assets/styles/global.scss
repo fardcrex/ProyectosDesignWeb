@@ -1,0 +1,39 @@
+$ruler: 1rem;
+
+$color-bg: hsl(25, 100%, 99%);
+$color-primary: #ff6531;
+$color-secondary: #ffa134;
+$color-shadow: #e3e5e9;
+$color-white: rgba(255, 255, 255, 0.98);
+$color-desactive-btn: #c8d0e7;
+
+//neumorfismo
+$color-card: hsl(20, 27%, 98%);
+/* $color-card: hsl(25, 50%, 98%); */
+$color-card-outer: hsl(0, 8%, 97%);
+$shadow: 0.3rem 0.3rem 0.6rem $color-shadow, -0.5rem -0.5rem 1rem $color-white;
+$inner-shadow: inset 0.2rem 0.2rem 0.5rem $color-shadow,
+  inset -0.2rem -0.2rem 0.5rem $color-white;
+
+$shadow-neumorphic: 4px 4px 5px $color-shadow, -5px -4px 10px $color-white;
+
+$shadow-neumorphic-outer: inset 4px 4px 6px $color-shadow,
+  inset -6px -6px 10px $color-white, 0px 0px 4px rgba(255, 255, 255, 0.2) !important;
+
+$font-title-row: 1rem;
+$font-title-card: 1.375rem;
+$font-text: 1rem;
+$font-cantidad: 0.9rem;
+$font-fecha: 0.9rem;
+$font-precio: 0.95rem;
+$color-font-row-title: #6d2901;
+$color-font-text: #8d96a8;
+$color-font-cantidad: #555f76;
+$color-font-fecha: #555f76;
+$color-font-precio: #555f76;
+
+//Media Query
+$tablet: 540px;
+$notebook: 814px;
+$laptop: 1025px;
+$desk: 1500px;
