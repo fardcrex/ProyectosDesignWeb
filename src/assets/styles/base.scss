@@ -1,1 +1,6 @@
 @import "@/assets/styles/global.scss";
+@keyframes moveRight {
+  100% {
+    transform: translateX(-2950px);
+  }
+}

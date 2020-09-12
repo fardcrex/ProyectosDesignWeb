@@ -15,7 +15,7 @@
           <div class="night">
             <div
               class="surface"
-              v-bind:style="{ animation: `moveRight-data-v-42c75572 ${velocidad}s linear infinite` }"
+              v-bind:style="{ animation: `moveRight ${velocidad}s linear infinite` }"
             ></div>
             <div class="car suspension">
               <img
