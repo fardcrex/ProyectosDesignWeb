@@ -41,14 +41,14 @@
 <script>
 import NoteItem from "../components/NoteItem.vue";
 import CreateNoteModal from "../components/CreateNoteModal.vue";
-/* import { getNotes } from "../repository"; */
+import { getNotes } from "../repository/repositoryFire";
 
 export default {
   name: "NoteTaker",
   components: { NoteItem, CreateNoteModal },
   data() {
     return {
-      notes: [{ title: "this.title", body: "this.body" }],
+      notes: [],
     };
   },
   methods: {
@@ -64,10 +64,8 @@ export default {
       this.notes = [note, ...this.notes];
     },
   },
-  mounted() {
-    /*   getNotes()
-      .then((data) => (this.notes = data.notes))
-      .catch((err) => alert(err)); */
+  async mounted() {
+    this.notes = await getNotes();
   },
 };
 </script>

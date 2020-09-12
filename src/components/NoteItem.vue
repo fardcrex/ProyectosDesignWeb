@@ -25,7 +25,7 @@
   </article>
 </template>
 <script>
-import { deleteNote } from "../repository";
+import { deleteNote } from "../repository/repositoryFire";
 import UpdateNoteModal from "./UpdateNoteModal";
 import Moment from "moment";
 
@@ -46,7 +46,6 @@ export default {
   },
   filters: {
     moment(date) {
-      console.log(date);
       return Moment(date).format("MMMM Do YYYY, h:mm a");
     },
   },

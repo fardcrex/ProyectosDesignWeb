@@ -51,7 +51,7 @@
 </template>
 
 <script>
-/* import { createNote } from "../repository"; */
+import { createNote } from "../repository/repositoryFire";
 export default {
   name: "CreateNoteModal",
   data() {
@@ -62,16 +62,16 @@ export default {
     };
   },
   methods: {
-    create() {
+    async create() {
       let data = { title: this.title, body: this.body };
-      this.$emit("createNote", data);
+
+      const res = await createNote(data);
+      this.$emit("createNote", res.note);
       this.title = this.body = "";
       this.toggle();
-      /* createNote(data)
-        .then((data) => {
-          this.$emit("createNote", data.note);
-          this.title = this.body = "";
-          this.toggle();
+      /*  .then((data) => {
+          console.log(data);
+
         })
         .catch((err) => alert(err.message)); */
     },

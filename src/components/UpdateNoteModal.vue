@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import { updateNote } from "../repository";
+import { updateNote } from "../repository/repositoryFire";
 export default {
   name: "UpdateNoteModal",
   data() {
@@ -62,7 +62,11 @@ export default {
   props: ["note"],
   methods: {
     update() {
-      let data = { title: this.title, body: this.body };
+      let data = {
+        title: this.title,
+        body: this.body,
+        createdAt: this.note.createdAt,
+      };
       updateNote(data, this.note._id)
         .then((data) => {
           this.$emit("updateNote", data.note);
