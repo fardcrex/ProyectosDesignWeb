@@ -170,9 +170,7 @@ $desk: 1500px;
   position: relative;
   overflow-x: hidden;
 }
-.moveRight {
-  animation: moveRight 6s linear infinite;
-}
+
 .surface {
   height: 140px;
   width: 500%;

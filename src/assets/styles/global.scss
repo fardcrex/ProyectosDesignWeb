@@ -37,3 +37,9 @@ $tablet: 540px;
 $notebook: 814px;
 $laptop: 1025px;
 $desk: 1500px;
+
+@keyframes moveRight {
+  100% {
+    transform: translateX(-2950px);
+  }
+}
