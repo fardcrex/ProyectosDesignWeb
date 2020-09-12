@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome a mis varios proyectos de ejercicios web" />
+    <HelloWorld msg="Welcome a mis proyectos de aprendizaje web" />
     <div class="container_ejercicios">
       <CardPageView
         v-for="(contenido,index) in pagesContenidoArray"
