@@ -1,10 +1,132 @@
 <template>
   <div class="contenedorGrid">
     <div class="cabezera">
-      <div
-        v-for="tab in menu"
-        v-bind:key="tab"
-      >{{tab}}</div>
+      <nav class="navbar is-transparent">
+        <div class="navbar-brand">
+          <a
+            class="navbar-item"
+            href="https://bulma.io"
+          >
+            <img
+              src="https://bulma.io/images/bulma-logo.png"
+              alt="Bulma: a modern CSS framework based on Flexbox"
+              width="112"
+              height="28"
+            >
+          </a>
+          <div
+            class="navbar-burger burger"
+            data-target="navbarExampleTransparentExample"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div
+          id="navbarExampleTransparentExample"
+          class="navbar-menu"
+        >
+          <div class="navbar-start">
+            <a
+              class="navbar-item"
+              href="https://bulma.io/"
+              v-for="tab in menu"
+              v-bind:key="tab"
+            >{{tab}}</a>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a
+                class="navbar-link"
+                href="https://bulma.io/documentation/overview/start/"
+              >
+                Docs
+              </a>
+              <div class="navbar-dropdown is-boxed">
+                <a
+                  class="navbar-item"
+                  href="https://bulma.io/documentation/overview/start/"
+                >
+                  Overview
+                </a>
+                <a
+                  class="navbar-item"
+                  href="https://bulma.io/documentation/overview/modifiers/"
+                >
+                  Modifiers
+                </a>
+                <a
+                  class="navbar-item"
+                  href="https://bulma.io/documentation/columns/basics/"
+                >
+                  Columns
+                </a>
+                <a
+                  class="navbar-item"
+                  href="https://bulma.io/documentation/layout/container/"
+                >
+                  Layout
+                </a>
+                <a
+                  class="navbar-item"
+                  href="https://bulma.io/documentation/form/general/"
+                >
+                  Form
+                </a>
+                <hr class="navbar-divider">
+                <a
+                  class="navbar-item"
+                  href="https://bulma.io/documentation/elements/box/"
+                >
+                  Elements
+                </a>
+                <a
+                  class="navbar-item is-active"
+                  href="https://bulma.io/documentation/components/breadcrumb/"
+                >
+                  Components
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="field is-grouped">
+                <p class="control">
+                  <a
+                    class="bd-tw-button button"
+                    data-social-network="Twitter"
+                    data-social-action="tweet"
+                    data-social-target="https://bulma.io"
+                    target="_blank"
+                    href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms"
+                  >
+                    <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                    </span>
+                    <span>
+                      Tweet
+                    </span>
+                  </a>
+                </p>
+                <p class="control">
+                  <a
+                    class="button is-primary"
+                    href="https://github.com/jgthms/bulma/releases/download/0.9.0/bulma-0.9.0.zip"
+                  >
+                    <span class="icon">
+                      <i class="fas fa-download"></i>
+                    </span>
+                    <span>Download</span>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
 
     </div>
     <div class="ads">
@@ -19,14 +141,79 @@
     </div>
     <div class="main">
       <div
+        class="card"
         v-for="(item,index) in items"
         v-bind:key="index"
       >
-        <h2>{{item.titulo}}</h2>
-        <p>{{item.cuerpo}}</p>
+        <header class="card-header">
+          <p class="card-header-title">
+            {{item.titulo}}
+          </p>
+          <a
+            href="#"
+            class="card-header-icon"
+            aria-label="more options"
+          >
+            <span class="icon">
+              <i
+                class="fas fa-angle-down"
+                aria-hidden="true"
+              ></i>
+            </span>
+          </a>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            {{item.cuerpo}}
+            <br>
+            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="bibliografia">
+      <div class="tabs is-boxed">
+        <ul>
+          <li class="is-active">
+            <a>
+              <span class="icon is-small"><i
+                  class="fas fa-image"
+                  aria-hidden="true"
+                ></i></span>
+              <span>Pictures</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon is-small"><i
+                  class="fas fa-music"
+                  aria-hidden="true"
+                ></i></span>
+              <span>Music</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon is-small"><i
+                  class="fas fa-film"
+                  aria-hidden="true"
+                ></i></span>
+              <span>Videos</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <span class="icon is-small"><i
+                  class="far fa-file-alt"
+                  aria-hidden="true"
+                ></i></span>
+              <span>Documents</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="bibliografia"></div>
     <div class="redes"></div>
     <div class="footerino"></div>
   </div>
@@ -40,7 +227,8 @@ export default {
       items: [
         {
           titulo: "titulo",
-          cuerpo: "cuerpo del item",
+          cuerpo:
+            " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
         },
         {
           titulo: "titulo",
@@ -54,7 +242,8 @@ export default {
       for (let index = 0; index < 25; index++) {
         this.items.push({
           titulo: "titulo",
-          cuerpo: "cuerpo del item",
+          cuerpo:
+            " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
         });
       }
     },
@@ -63,6 +252,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/bulma.scss";
 * {
   box-sizing: border-box;
 }
@@ -117,7 +307,7 @@ $desk: 1500px;
   align-items: center;
 }
 .main {
-  background-color: cadetblue;
+  background-color: rgb(246, 250, 250);
   grid-area: main;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -127,14 +317,6 @@ $desk: 1500px;
   justify-items: stretch;
   padding: 2rem;
   overflow-y: auto;
-  div {
-    background-color: coral;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 0 2rem;
-    align-items: flex-start;
-  }
 }
 .ads {
   background-color: rgb(255, 255, 109);

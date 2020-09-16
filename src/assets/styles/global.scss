@@ -1,3 +1,16 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
 $ruler: 1rem;
 
 $color-bg: hsl(25, 100%, 99%);
@@ -37,9 +50,3 @@ $tablet: 540px;
 $notebook: 814px;
 $laptop: 1025px;
 $desk: 1500px;
-
-@keyframes moveRight {
-  100% {
-    transform: translateX(-2950px);
-  }
-}

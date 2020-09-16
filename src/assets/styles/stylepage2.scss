@@ -1,0 +1,31 @@
+$color-primario: #ff6531;
+$color-secundario: #368e5c;
+$color-gradient: linear-gradient(
+  -10deg,
+  rgba(48, 207, 208, 0.8) 0%,
+  rgba(51, 8, 103, 0.7) 100%
+);
+
+/* linear-gradient(
+  135deg,
+  rgba(49, 24, 131, 0.9) 0%,
+  rgba(72, 56, 149, 0.8) 80%
+); */
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+p {
+  font-size: 1.6em;
+}
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+section {
+  padding: 5rem 0;
+}

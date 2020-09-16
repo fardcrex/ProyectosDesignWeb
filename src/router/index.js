@@ -5,6 +5,8 @@ import Tailwind from "../views/Tailwind.vue";
 import Grid from "../views/Grid.vue";
 import subGrid from "../views/subGrid.vue";
 import ExamplePage1 from "../views/ExamplePage1.vue";
+import ExamplePage2 from "../views/ExamplePage2.vue";
+import NamePage from "../components/page_example_2//NamePage.vue";
 
 Vue.use(VueRouter);
 
@@ -33,6 +35,38 @@ const routes = [
     path: "/ExamplePage1",
     name: "ExamplePage1",
     component: ExamplePage1
+  },
+  {
+    path: "/ExamplePage2",
+    name: "ExamplePage2",
+    component: ExamplePage2,
+    children: [
+      {
+        path: "/",
+        component: NamePage,
+        props: { NamePageTitle: "home" }
+      },
+      {
+        path: "destinatario",
+        component: NamePage,
+        props: { NamePageTitle: "destinatario" }
+      },
+      {
+        path: "precio",
+        component: NamePage,
+        props: { NamePageTitle: "precio" }
+      },
+      {
+        path: "booking",
+        component: NamePage,
+        props: { NamePageTitle: "booking" }
+      },
+      {
+        path: "nosotros",
+        component: NamePage,
+        props: { NamePageTitle: "nosotros" }
+      }
+    ]
   },
   {
     path: "/notas",

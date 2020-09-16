@@ -38,6 +38,7 @@ export default {
 .home {
   background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
   min-height: 100vh;
+  text-align: center;
 }
 .container_ejercicios {
   display: grid;

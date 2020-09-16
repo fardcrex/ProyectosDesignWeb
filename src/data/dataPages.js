@@ -6,6 +6,12 @@ export default [
     link: "examplePage1"
   },
   {
+    imagenSrc: "examplePage2.png",
+    titulo: "Dinamo landing simulacro",
+    contenido: "Landing donde practico el build de una landing page",
+    link: "ExamplePage2"
+  },
+  {
     imagenSrc: "notasPage.png",
     titulo: "Tomador de nota",
     contenido: "CRUD de notas con firebase y para los estilos se usa Bulma.css",
