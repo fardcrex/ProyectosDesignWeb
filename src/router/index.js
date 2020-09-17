@@ -38,11 +38,11 @@ const routes = [
   },
   {
     path: "/ExamplePage2",
-    name: "ExamplePage2",
     component: ExamplePage2,
     children: [
       {
         path: "/",
+        name: "ExamplePage2",
         component: NamePage,
         props: { NamePageTitle: "home" }
       },

@@ -29,21 +29,18 @@
             <p>Lorem ipsum dolor sit amet, cta, vitae eveniet distinctio aut dolorum?</p>
           </div>
           <div class="activities-grid">
-            <div class="activities-grid-item start-gazing">
-              <i class="icon ion-md-star"></i>
-              <h1>Estrella dinamo</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam reiciendis consequuntur adipisci esse corporis fugiat, magni dolores magnam aperiam, praesentium voluptates illum minus! Ut, officiis dolores ipsa reiciendis iste at.</p>
-            </div>
-            <div class="activities-grid-item hiking">
-              <i class="icon ion-md-compass"></i>
-              <h1>hiking dinamo</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam reiciendis consequuntur adipisci esse corporis fugiat, magni dolores magnam aperiam, praesentium voluptates illum minus! Ut, officiis dolores ipsa reiciendis iste at.</p>
-            </div>
-            <div class="activities-grid-item camping">
-              <i class="icon ion-md-bonfire"></i>
-              <h1>Camping dinamo</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam reiciendis consequuntur adipisci esse corporis fugiat, magni dolores magnam aperiam, praesentium voluptates illum minus! Ut, officiis dolores ipsa reiciendis iste at.</p>
-            </div>
+
+            <CardActivity
+              v-for="(item,index) in CardActivityList"
+              v-bind:key="index"
+              :title="item.titulo"
+              :urlBackground="item.rutaFondoImg"
+              :cuerpo="item.cuerpo"
+            >
+              <svg>
+                <use :href="('./icons.svg#'+item.svgId)" />
+              </svg>
+            </CardActivity>
           </div>
         </div>
       </section>
@@ -74,16 +71,16 @@
             <p>Lorem ipsum dolor sit amet, cta, vitae eveniet distinctio aut dolorum?</p>
           </div>
           <div class="adventure-grid">
-            <div class="adventure-grid-item">
+            <div
+              class="adventure-grid-item"
+              v-for="(item,index) in adventureList"
+              v-bind:key="index"
+            >
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates iure asperiores sapiente saepe accusantium. Incidunt minus eum iste! Voluptate pariatur aspernatur aperiam rerum omnis qui error nam sunt earum doloremque.
+                {{item.text}}
               </p>
             </div>
-            <div class="adventure-grid-item">
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates iure asperiores sapiente saepe accusantium. Incidunt minus eum iste! Voluptate pariatur aspernatur aperiam rerum omnis qui error nam sunt earum doloremque.
-              </p>
-            </div>
+
           </div>
           <a
             class="btn"
@@ -100,8 +97,9 @@
 
 <script>
 import AppNav from "@/components/page_example_2/AppNav.vue";
+import CardActivity from "@/components/page_example_2/CardActivity.vue";
 export default {
-  components: { AppNav },
+  components: { AppNav, CardActivity },
   data() {
     return {
       nav_links: [
@@ -124,6 +122,42 @@ export default {
         {
           name: "Nosotros",
           ruta: "/ExamplePage2/Nosotros",
+        },
+      ],
+      CardActivityList: [
+        {
+          titulo: "Estrella dinamo",
+          cuerpo:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam reiciendis consequuntur adipisci esse corporis fugiat, magni dolores magnam aperiam, praesentium voluptates illum minus! Ut, officiis dolores ipsa reiciendis iste at.",
+          rutaFondoImg: "stars.jpg",
+          icono: "ion-md-star",
+          svgId: "stars",
+        },
+        {
+          titulo: "hiking dinamo",
+          cuerpo:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam reiciendis consequuntur adipisci esse corporis fugiat, magni dolores magnam aperiam, praesentium voluptates illum minus! Ut, officiis dolores ipsa reiciendis iste at.",
+          rutaFondoImg: "hiking.jpg",
+          icono: "ion-md-compass",
+          svgId: "hiking",
+        },
+        {
+          titulo: "Camping dinamo",
+          cuerpo:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam reiciendis consequuntur adipisci esse corporis fugiat, magni dolores magnam aperiam, praesentium voluptates illum minus! Ut, officiis dolores ipsa reiciendis iste at.",
+          rutaFondoImg: "camping.jpg",
+          icono: "ion-md-bonfire",
+          svgId: "camping",
+        },
+      ],
+      adventureList: [
+        {
+          text:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates iure asperiores sapiente saepe accusantium. Incidunt minus eum iste! Voluptate pariatur aspernatur aperiam rerum omnis qui error nam sunt earum doloremque.",
+        },
+        {
+          text:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates iure asperiores sapiente saepe accusantium. Incidunt minus eum iste! Voluptate pariatur aspernatur aperiam rerum omnis qui error nam sunt earum doloremque.",
         },
       ],
     };
@@ -227,48 +261,6 @@ header {
   gap: 2.5em;
 }
 
-.activities-grid-item {
-  height: 40em;
-  padding: 4em 5em 6em;
-  position: relative;
-  color: #fafafa;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 1;
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: $color-gradient;
-    z-index: -1;
-  }
-  i {
-    font-size: 4em;
-    color: $color-secundario;
-  }
-  h1 {
-    font-family: "Aldrich", sans-serif;
-    font-size: 1.7em;
-    text-transform: uppercase;
-    margin: 2em 0;
-  }
-}
-.start-gazing {
-  background: url("../assets/img_page_2/stars.jpg");
-}
-.hiking {
-  background: url("../assets/img_page_2/hiking.jpg");
-}
-.camping {
-  background: url("../assets/img_page_2/camping.jpg");
-}
-
 /* testimonial */
 
 .testimonials {
@@ -362,50 +354,7 @@ footer {
   header {
     height: 8em;
   }
-  .nav-brand {
-    width: 3.5em;
-  }
-  .nav-list {
-    width: initial;
-    height: initial;
-    background-color: transparent;
-    position: initial;
-    top: initial;
-    right: initial;
-    flex-direction: row;
-    transition: initial;
-  }
-  .menu-icons {
-    display: none;
-  }
-  .nav-item {
-    margin: 0 2.5em;
-  }
-  .nav-link,
-  .current {
-    color: #fafafa;
-    position: relative;
-    font-size: 1.3em;
-  }
-  .nav-link::before,
-  .current::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -0.5em;
-    background-color: $color-secundario;
-    width: 100%;
-    height: 2px;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 650ms;
-  }
-  .current::before {
-    transform: scaleX(1);
-  }
-  .nav-link:hover::before {
-    transform: scaleX(1);
-  }
+
   .hero {
     height: 80vh;
     min-height: 600px;
