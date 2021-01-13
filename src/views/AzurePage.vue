@@ -68,35 +68,35 @@
         src="../assets/img_page_azura/foto1.jpg"
         alt="Edificio"
         class="w3-image"
-        width="1000"
-        height="500"
+        width="900"
+        height="450"
       >
       <img
         src="../assets/img_page_azura/foto2.jpg"
         alt="Edificio"
         class="w3-image w3-margin-top"
-        width="1000"
+        width="900"
         height="500"
       >
       <img
         src="../assets/img_page_azura/foto3.jpg"
         alt="Edificio"
         class="w3-image w3-margin-top"
-        width="1000"
+        width="900"
         height="500"
       >
       <img
         src="../assets/img_page_azura/foto4.jpg"
         alt="Edificio"
         class="w3-image w3-margin-top"
-        width="1000"
+        width="900"
         height="500"
       >
       <img
         src="../assets/img_page_azura/foto5.jpg"
         alt="Edificio"
         class="w3-image w3-margin-top"
-        width="1000"
+        width="900"
         height="500"
       >
 
