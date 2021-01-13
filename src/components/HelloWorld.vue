@@ -22,6 +22,7 @@ export default {
 <style scoped lang="scss">
 h1 {
   margin: 0;
+  color: #36829d;
 }
 h3 {
   margin: 40px 0 0;
@@ -38,7 +39,8 @@ a {
   color: #42b983;
 }
 img {
-  height: 150px;
-  margin: 0;
+  height: 55px;
+  border-radius: 0.5rem;
+  margin: 20px 0;
 }
 </style>

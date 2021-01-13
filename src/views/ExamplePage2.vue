@@ -166,6 +166,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/styles/normalize";
 @import "@/assets/styles/base.scss";
 @import "@/assets/styles/stylepage2.scss";
 /* header */
@@ -178,7 +179,7 @@ header {
   z-index: 1;
 }
 .container {
-  width: 100%;
+  width: 80%;
   max-width: 98rem;
   margin: 0 auto;
   padding: 0 1.5rem;

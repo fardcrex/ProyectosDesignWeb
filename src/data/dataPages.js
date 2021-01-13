@@ -12,6 +12,12 @@ export default [
     link: "ExamplePage2"
   },
   {
+    imagenSrc: "PageAzura.png",
+    titulo: "Landing simple de Fotógrafa",
+    contenido: "Landing donde practico migrar un proyecto html a vue",
+    link: "PageAzure"
+  },
+  {
     imagenSrc: "notasPage.png",
     titulo: "Tomador de nota",
     contenido: "CRUD de notas con firebase y para los estilos se usa Bulma.css",

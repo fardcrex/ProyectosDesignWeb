@@ -1,15 +1,21 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
 
-Vue.use(Vuex)
+import messages from "./messages";
+import user from "./user";
+import utils from "./utils";
 
-export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
+Vue.use(Vuex);
+
+const store = new Vuex.Store({
+  state: {},
+  mutations: {},
   actions: {
+    checkAuth() {},
   },
-  modules: {
-  }
-})
+  modules: { messages, user, utils },
+});
+
+export default store;
+
+store.dispatch("checkAuth");

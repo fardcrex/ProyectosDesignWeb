@@ -6,7 +6,9 @@ import Grid from "../views/Grid.vue";
 import subGrid from "../views/subGrid.vue";
 import ExamplePage1 from "../views/ExamplePage1.vue";
 import ExamplePage2 from "../views/ExamplePage2.vue";
-import NamePage from "../components/page_example_2//NamePage.vue";
+import NamePage from "../components/page_example_2/NamePage.vue";
+import Login from "../views/Login.vue";
+import PageAzure from "../views/AzurePage.vue";
 
 Vue.use(VueRouter);
 
@@ -22,6 +24,11 @@ const routes = [
     component: Tailwind
   },
   {
+    path: "/login",
+    name: "Login",
+    component: Login
+  },
+  {
     path: "/Grid",
     name: "Grid",
     component: Grid
@@ -35,6 +42,11 @@ const routes = [
     path: "/ExamplePage1",
     name: "ExamplePage1",
     component: ExamplePage1
+  },
+  {
+    path: "/PageAzure",
+    name: "PageAzure",
+    component: PageAzure
   },
   {
     path: "/ExamplePage2",
