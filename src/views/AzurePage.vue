@@ -76,7 +76,7 @@
         alt="Edificio"
         class="w3-image w3-margin-top"
         width="900"
-        height="500"
+        height="450"
       >
       <img
         src="../assets/img_page_azura/foto3.jpg"
